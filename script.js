@@ -1,4 +1,3 @@
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -123,60 +122,6 @@ if (heroQuote) {
   setTimeout(typeWriter, 1000);
 }
 
-// Add particle animation
-function createParticles() {
-  const particlesContainer = document.querySelector('.particles');
-  const particleCount = 50;
-  
-  for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement('div');
-    particle.style.cssText = `
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: rgba(139, 92, 246, 0.5);
-      border-radius: 50%;
-      pointer-events: none;
-    `;
-    
-    // Random position
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    
-    // Random animation delay
-    particle.style.animationDelay = Math.random() * 20 + 's';
-    
-    // Add floating animation
-    particle.style.animation = `particleFloat ${15 + Math.random() * 10}s ease-in-out infinite`;
-    
-    particlesContainer.appendChild(particle);
-  }
-}
-
-// Add particle float keyframes
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes particleFloat {
-    0%, 100% {
-      transform: translateY(0px) translateX(0px);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    50% {
-      transform: translateY(-100px) translateX(50px);
-    }
-  }
-`;
-document.head.appendChild(style);
-
-// Initialize particles
-createParticles();
-
 // Add glow effect to skill tags on hover
 document.querySelectorAll('.skill-tag').forEach(tag => {
   tag.addEventListener('mouseenter', () => {
@@ -223,45 +168,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Add cursor trail effect
-document.addEventListener('mousemove', (e) => {
-  const trail = document.createElement('div');
-  trail.style.cssText = `
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.8), transparent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    left: ${e.clientX - 3}px;
-    top: ${e.clientY - 3}px;
-    animation: cursorTrail 0.6s ease-out forwards;
-  `;
-  
-  document.body.appendChild(trail);
-  
-  setTimeout(() => {
-    trail.remove();
-  }, 600);
-});
-
-// Add cursor trail animation
-const cursorStyle = document.createElement('style');
-cursorStyle.textContent = `
-  @keyframes cursorTrail {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0);
-      opacity: 0;
-    }
-  }
-`;
-document.head.appendChild(cursorStyle);
-
 // Console welcome message
 console.log(`
   🚀 Welcome to Harshitha's Portfolio!
@@ -270,7 +176,7 @@ console.log(`
   - Pure HTML/CSS/JS (no frameworks!)
   - Glassmorphism design
   - Smooth animations
-  - Gen Z vibes ✨
+ 
   
   Feel free to explore the code!
 `);
